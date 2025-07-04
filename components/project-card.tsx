@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion"
 import { ExternalLink, Github, Calendar, ImageIcon } from "lucide-react"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import type { Project } from "@/data/projects"
+import { Card, CardContent, CardHeader } from "../components/ui/card"
+import { Badge } from "../components/ui/badge"
+import { Button } from "../components/ui/button"
+import type { Project } from "../data/projects"
+import Image from "next/image" // already imported at the top
 
 interface ProjectCardProps {
   project: Project
@@ -27,11 +28,13 @@ const ProjectCard = ({ project, index, selectedSkills, onClick }: ProjectCardPro
       <Card className="h-full overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm group-hover:bg-white dark:group-hover:bg-gray-800">
         {/* Project Image with Multiple Images Indicator */}
         <div className="relative aspect-video overflow-hidden">
-          <img
-            src={project.images[0] || "/placeholder.svg"}
-            alt={project.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+          <Image
+  src={project.images[0] || "/placeholder.svg"}
+  alt={project.name}
+  fill
+  sizes="(max-width: 768px) 100vw, 33vw"
+  className="object-cover transition-transform duration-500 group-hover:scale-110"
+/>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           {/* Multiple Images Indicator */}

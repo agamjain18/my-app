@@ -2,10 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Briefcase, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useSkillsFilter } from "@/hooks/use-skills-filter"
-import ProjectCard from "@/components/project-card"
-import type { Project } from "@/data/projects"
+import { Button } from "../components/ui/button"
+import { useSkillsFilter } from "../hooks/use-skills-filter"
+import ProjectCard from "../components/project-card"
+import type { Project } from "../data/projects"
 
 const Projects = () => {
   const { selectedSkills, filteredProjects, clearFilters } = useSkillsFilter()
@@ -51,7 +51,7 @@ const Projects = () => {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project: Project, index: number) => (
               <ProjectCard
                 key={project.id}
                 project={project}

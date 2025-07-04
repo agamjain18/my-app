@@ -1,9 +1,9 @@
 "use client"
 import { motion, AnimatePresence } from "framer-motion"
 import { Code, X, Filter } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { useSkillsFilter } from "@/hooks/use-skills-filter"
+import { Button } from "../components/ui/button"
+import { Badge } from "../components/ui/badge"
+import { useSkillsFilter } from "../hooks/use-skills-filter"
 
 const Skills = () => {
   const { selectedSkills, toggleSkill, clearFilters, allSkills } = useSkillsFilter()

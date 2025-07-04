@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Moon, Sun, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useTheme } from "@/components/theme-provider"
+import { Button } from "../components/ui/button"
+import { useTheme } from "../components/theme-provider"
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme()

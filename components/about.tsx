@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { User, Code2, Rocket, Heart } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "../components/ui/card"
 
 const About = () => {
   const highlights = [
@@ -52,17 +52,17 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm a passionate full-stack developer with over 5 years of experience creating digital solutions that make
+              Im a passionate full-stack developer with over 5 years of experience creating digital solutions that make
               a difference. My journey in tech started with curiosity and has evolved into a deep love for building
               applications that solve real-world problems.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               I specialize in modern web technologies like React and Next.js, mobile development with Flutter, and
-              backend systems using Node.js and cloud platforms. I'm particularly excited about emerging technologies
+              backend systems using Node.js and cloud platforms. Im particularly excited about emerging technologies
               like AI, blockchain, and IoT.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              When I'm not coding, you'll find me contributing to open-source projects, mentoring aspiring developers,
+              When Im not coding, youll find me contributing to open-source projects, mentoring aspiring developers,
               or exploring the latest tech trends. I believe in continuous learning and sharing knowledge with the
               community.
             </p>

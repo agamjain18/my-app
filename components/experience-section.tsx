@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Calendar, MapPin, Building, ExternalLink } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "../components/ui/card"
+import { Badge } from "../components/ui/badge"
 import { useRouter } from "next/navigation"
 
 const ExperienceSection = () => {
@@ -77,7 +77,7 @@ const ExperienceSection = () => {
       type: "Full-time",
       description:
         "Started career developing websites and learning modern web development practices. Gained experience in both frontend and backend technologies.",
-      achievements: ["Completed 10+ client projects", "Learned 5 new technologies", "Received 'Rising Star' award"],
+      achievements: ["Completed 10+ client projects", "Learned 5 new technologies", "Received Rising Star award"],
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       companyLogo: "/placeholder-logo.png",
       website: "https://websolutions.com",
@@ -129,7 +129,7 @@ const ExperienceSection = () => {
             Professional Experience
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A journey through my professional career, showcasing growth, achievements, and the technologies I've
+            A journey through my professional career, showcasing growth, achievements, and the technologies Ive
             mastered along the way.
           </p>
         </motion.div>
@@ -247,7 +247,7 @@ const ExperienceSection = () => {
           className="text-center mt-16"
         >
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Interested in working together? Let's discuss your next project.
+            Interested in working together? Lets discuss your next project.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}

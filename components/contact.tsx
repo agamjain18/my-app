@@ -5,10 +5,10 @@ import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { MessageCircle, Mail, Github, Linkedin, Twitter, Send, MapPin, Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "../components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
+import { Input } from "../components/ui/input"
+import { Textarea } from "../components/ui/textarea"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -93,11 +93,11 @@ const Contact = () => {
             <MessageCircle className="h-8 w-8 text-white" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-            Let's Work Together
+            Lets Work Together
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full mx-auto mb-6" />
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? I'm always excited to work on new projects and collaborate with amazing
+            Ready to bring your ideas to life? Im always excited to work on new projects and collaborate with amazing
             people.
           </p>
         </motion.div>
@@ -114,7 +114,7 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">Send a Message</CardTitle>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Fill out the form below and I'll get back to you within 24 hours.
+                  Fill out the form below and Ill get back to you within 24 hours.
                 </p>
               </CardHeader>
               <CardContent>
@@ -232,7 +232,7 @@ const Contact = () => {
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-900/20">
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Ready to Start?</h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I'm always interested in new opportunities and exciting projects. Let's discuss how we can work
+                Im always interested in new opportunities and exciting projects. Lets discuss how we can work
                 together!
               </p>
               <Button
