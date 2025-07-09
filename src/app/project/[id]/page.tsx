@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { use, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import {
   ArrowLeft,
@@ -20,28 +20,38 @@ import { Card, CardContent } from "../../../../components/ui/card"
 import { ThemeProvider } from "../../../../components/theme-provider"
 import type { Project } from "../../../../data/projects"
 import { projectsData } from "../../../../data/projects"
+import Image from "next/image"
 
-const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
+// Define the proper PageProps type for Next.js 15
+interface PageProps {
+  params: Promise<{ id: string }>
+}
+
+const ProjectDetailPage = ({ params }: PageProps) => {
+  // Use the 'use' hook to unwrap the Promise
+  const { id } = use(params)
+  
   const [project, setProject] = useState<Project | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Try to get project from sessionStorage first
-    const storedProject = sessionStorage.getItem("selectedProject")
-    if (storedProject) {
-      setProject(JSON.parse(storedProject))
-      setLoading(false)
-      return
-    }
+    // Try to get project from state or context first (since sessionStorage isn't available in artifacts)
+    // In a real app, you might use sessionStorage here
+    // const storedProject = sessionStorage.getItem("selectedProject")
+    // if (storedProject) {
+    //   setProject(JSON.parse(storedProject))
+    //   setLoading(false)
+    //   return
+    // }
 
-    // Fallback: find project by ID
-    const projectId = Number.parseInt(params.id)
+    // Find project by ID
+    const projectId = Number.parseInt(id)
     const foundProject = projectsData.find((p) => p.id === projectId)
     if (foundProject) {
       setProject(foundProject)
     }
     setLoading(false)
-  }, [params.id])
+  }, [id])
 
   const goBack = () => {
     window.history.back()
@@ -189,10 +199,12 @@ const ProjectDetailContent = ({ project, onBack }: { project: Project; onBack: (
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 dark:bg-gray-800">
                 <div className="aspect-video relative">
-                  <img
-                    src={project.images[currentImageIndex] || "/placeholder.svg"}
-                    alt={`${project.name} - Image ${currentImageIndex + 1}`}
-                    className="w-full h-full object-cover transition-opacity duration-500"
+                  <Image
+                    src={project.images[currentImageIndex]}
+                    alt={`${project.name} screenshot ${currentImageIndex + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
 
                   {/* Navigation Arrows */}
@@ -246,16 +258,18 @@ const ProjectDetailContent = ({ project, onBack }: { project: Project; onBack: (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-20 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                      className={`flex-shrink-0 w-20 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 relative ${
                         index === currentImageIndex
                           ? "border-blue-500 shadow-lg"
                           : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
                       }`}
                     >
-                      <img
-                        src={image || "/placeholder.svg"}
-                        alt={`Thumbnail ${index + 1}`}
-                        className="w-full h-full object-cover"
+                      <Image
+                        src={image}
+                        alt={`${project.name} thumbnail ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="80px"
                       />
                     </button>
                   ))}
