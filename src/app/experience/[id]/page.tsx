@@ -41,9 +41,9 @@ const ExperienceDetailPage = () => {
         "Leading development of scalable web applications using React, Node.js, and AWS. Mentoring junior developers and architecting microservices solutions for enterprise-level applications.",
       detailedDescription: `As a Senior Full Stack Developer at TechCorp Solutions, I lead a team of 5 developers in creating cutting-edge web applications that serve over 100,000 users daily. My role encompasses both technical leadership and hands-on development, focusing on scalable architecture and performance optimization.
 
-      I've been instrumental in migrating legacy systems to modern cloud-based solutions, resulting in significant cost savings and improved system reliability. My expertise in React, Node.js, and AWS has enabled the company to deliver robust solutions that meet enterprise-grade requirements.
+      I&apos;ve been instrumental in migrating legacy systems to modern cloud-based solutions, resulting in significant cost savings and improved system reliability. My expertise in React, Node.js, and AWS has enabled the company to deliver robust solutions that meet enterprise-grade requirements.
 
-      Beyond coding, I mentor junior developers, conduct code reviews, and establish best practices that have improved our team's productivity by 40%. I also collaborate closely with product managers and designers to ensure technical feasibility and optimal user experience.`,
+      Beyond coding, I mentor junior developers, conduct code reviews, and establish best practices that have improved our team&apos;s productivity by 40%. I also collaborate closely with product managers and designers to ensure technical feasibility and optimal user experience.`,
       responsibilities: [
         "Lead development of scalable web applications using React, Node.js, and AWS",
         "Mentor and guide a team of 5 junior developers",
@@ -81,7 +81,7 @@ const ExperienceDetailPage = () => {
       projects: [
         {
           name: "E-Commerce Platform Redesign",
-          description: "Led complete redesign of company's main e-commerce platform",
+          description: "Led complete redesign of company&apos;s main e-commerce platform",
           impact: "Increased conversion rate by 25%",
           technologies: ["React", "Node.js", "AWS", "PostgreSQL"],
         },
@@ -238,14 +238,14 @@ const ExperienceDetailPage = () => {
         "Mentored 3 junior developers and interns",
         "Achieved 98% client satisfaction rate",
         "Implemented reusable component library used across 15+ projects",
-        "Led frontend development for agency's largest client project",
+        "Led frontend development for agency&apos;s largest client project",
         "Reduced development time by 30% through process improvements",
       ],
       technologies: ["JavaScript", "React", "HTML5", "CSS3", "SASS", "Webpack", "Git", "jQuery", "Bootstrap", "Gulp"],
       projects: [
         {
           name: "E-commerce Website Redesign",
-          description: "Complete redesign of major retail client's website",
+          description: "Complete redesign of major retail client&apos;s website",
           impact: "Increased online sales by 45%",
           technologies: ["React", "SASS", "Webpack", "Stripe API"],
         },
@@ -307,7 +307,7 @@ const ExperienceDetailPage = () => {
       achievements: [
         "Completed 10+ client projects successfully",
         "Learned 5 new technologies within first 6 months",
-        "Received 'Rising Star' award for exceptional performance",
+        "Received &apos;Rising Star&apos; award for exceptional performance",
         "Contributed to 20% increase in team productivity",
         "Built first e-commerce website independently",
         "Achieved 100% on-time project delivery record",
@@ -632,8 +632,8 @@ const ExperienceDetailPage = () => {
           <CardContent className="text-center py-12">
             <h3 className="text-2xl font-bold mb-4">Interested in My Experience?</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'd love to discuss how my experience at {experience.company} and other roles can contribute to your
-              team's success.
+              I&apos;d love to discuss how my experience at {experience.company} and other roles can contribute to your
+              team&apos;s success.
             </p>
             <Button
               size="lg"
