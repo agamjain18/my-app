@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { MessageCircle, Mail, Github, Linkedin, Twitter, Send, MapPin, Phone } from "lucide-react"
+import { MessageCircle, Mail, Github, Linkedin,  Send, MapPin, Phone } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
 import { Input } from "../components/ui/input"
