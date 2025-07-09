@@ -17,6 +17,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../../../components
 import { Badge } from "../../../../components/ui/badge"
 import { Button } from "../../../../components/ui/button"
 
+// Add this function to generate static params
+export async function generateStaticParams() {
+  // Return all possible experience IDs
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+  ]
+}
+
 const ExperienceDetailPage = () => {
   const params = useParams()
   const router = useRouter()
@@ -187,7 +198,7 @@ const ExperienceDetailPage = () => {
       teamSize: "8 person development team",
       reportingTo: "Lead Developer",
       workEnvironment: "Fully Remote",
-      companyBenefits: [
+      companyBenefit: [
         "Health Insurance",
         "Flexible working hours",
         "Professional development allowance",
@@ -550,7 +561,7 @@ const ExperienceDetailPage = () => {
                   <p className="text-gray-600 dark:text-gray-300">{experience.teamSize}</p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 dark:text-white mb-1">Reporting To</h4>
+                  <h4 className="font-medium text-gray-2900 dark:text-white mb-1">Reporting To</h4>
                   <p className="text-gray-600 dark:text-gray-300">{experience.reportingTo}</p>
                 </div>
                 {experience.website && (
