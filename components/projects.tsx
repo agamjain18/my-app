@@ -95,14 +95,21 @@ const Projects = () => {
             viewport={{ once: true }}
             className="text-center mt-16"
           >
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/20 bg-transparent"
-            >
-              <Github className="mr-2 h-5 w-5" />
-              View All on GitHub
-            </Button>
+            <a
+  href="https://github.com/agamjain18" // replace with your actual GitHub link
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    variant="outline"
+    size="lg"
+    className="border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/20 bg-transparent"
+  >
+    <Github className="mr-2 h-5 w-5" />
+    View All on GitHub
+  </Button>
+</a>
+
           </motion.div>
         )}
       </div>

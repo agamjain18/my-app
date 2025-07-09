@@ -12,11 +12,11 @@ const ExperienceSection = () => {
   const experiences = [
     {
       id: 1,
-      position: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
-      duration: "Jan 2022 - Present",
-      status: "Current",
+      position: "IT Analyst Intern.",
+      company: "QUANTSCIENTIST FINTECH",
+      location: "Indore, India",
+      duration: "Nav 2023 - Dec 2024",
+      status: "Completed",
       type: "Full-time",
       description:
         "Leading development of scalable web applications using React, Node.js, and AWS. Mentoring junior developers and architecting microservices solutions.",
@@ -25,63 +25,11 @@ const ExperienceSection = () => {
         "Led team of 5 developers",
         "Implemented CI/CD pipeline reducing deployment time by 60%",
       ],
-      technologies: ["React", "Node.js", "AWS", "TypeScript", "PostgreSQL"],
+      technologies: ["React", "Node.js", "Graphql", "Flutter", "UI PATH","AI Tools "],
       companyLogo: "/placeholder-logo.png",
       website: "https://techcorp.com",
     },
-    {
-      id: 2,
-      position: "Full Stack Developer",
-      company: "StartupXYZ",
-      location: "Remote",
-      duration: "Mar 2020 - Dec 2021",
-      status: "Completed",
-      type: "Full-time",
-      description:
-        "Developed and maintained multiple client projects using modern web technologies. Collaborated with design team to create responsive user interfaces.",
-      achievements: [
-        "Built 15+ client projects from scratch",
-        "Reduced bug reports by 35%",
-        "Implemented automated testing suite",
-      ],
-      technologies: ["Vue.js", "Python", "Django", "MongoDB", "Docker"],
-      companyLogo: "/placeholder-logo.png",
-      website: "https://startupxyz.com",
-    },
-    {
-      id: 3,
-      position: "Frontend Developer",
-      company: "Digital Agency Pro",
-      location: "New York, NY",
-      duration: "Jun 2018 - Feb 2020",
-      status: "Completed",
-      type: "Full-time",
-      description:
-        "Specialized in creating interactive and responsive web interfaces. Worked closely with UX/UI designers to implement pixel-perfect designs.",
-      achievements: [
-        "Delivered 25+ responsive websites",
-        "Improved page load speeds by 50%",
-        "Mentored 3 junior developers",
-      ],
-      technologies: ["JavaScript", "React", "SASS", "Webpack", "Git"],
-      companyLogo: "/placeholder-logo.png",
-      website: "https://digitalagencypro.com",
-    },
-    {
-      id: 4,
-      position: "Junior Web Developer",
-      company: "WebSolutions Inc",
-      location: "Austin, TX",
-      duration: "Aug 2017 - May 2018",
-      status: "Completed",
-      type: "Full-time",
-      description:
-        "Started career developing websites and learning modern web development practices. Gained experience in both frontend and backend technologies.",
-      achievements: ["Completed 10+ client projects", "Learned 5 new technologies", "Received Rising Star award"],
-      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-      companyLogo: "/placeholder-logo.png",
-      website: "https://websolutions.com",
-    },
+    
   ]
 
   const getStatusColor = (status: string) => {

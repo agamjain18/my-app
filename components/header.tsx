@@ -90,24 +90,9 @@ const Header = () => {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" onClick={toggleTheme} className="relative overflow-hidden group">
-              <motion.div
-                initial={false}
-                animate={{ rotate: theme === "dark" ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {theme === "dark" ? (
-                  <Sun className="h-5 w-5 text-yellow-500" />
-                ) : (
-                  <Moon className="h-5 w-5 text-blue-600" />
-                )}
-              </motion.div>
-            </Button>
+           
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
           </div>
         </div>
 

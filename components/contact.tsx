@@ -41,40 +41,35 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/alexjohnson",
+      href: "https://github.com/agamjain18",
       color: "hover:text-gray-900 dark:hover:text-white",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/alexjohnson",
+      href: "https://linkedin.com/in/aagam-jain-919b44211",
       color: "hover:text-blue-600",
     },
-    {
-      name: "Twitter",
-      icon: Twitter,
-      href: "https://twitter.com/alexjohnson",
-      color: "hover:text-blue-400",
-    },
+    
   ]
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "alex@example.com",
-      href: "mailto:alex@example.com",
+      value: "aagamjain152003@gmail.com",
+      href: "mailto:aagamjain152003@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+91 89890 65870",
+      href: "tel:+918989065870",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Indore (M.P.), India",
       href: "#",
     },
   ]

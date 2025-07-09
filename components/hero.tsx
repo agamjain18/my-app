@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import {
   ArrowDown,
   Github,
@@ -12,17 +12,17 @@ import {
   Award,
   Users,
   Code,
-} from "lucide-react"
-import { Button } from "../components/ui/button"
-import Image from "next/image"
+} from "lucide-react";
+import { Button } from "../components/ui/button";
+import Image from "next/image";
 
 type Position = {
-  top?: string
-  bottom?: string
-  left?: string
-  right?: string
-  transform?: string
-}
+  top?: string;
+  bottom?: string;
+  left?: string;
+  right?: string;
+  transform?: string;
+};
 
 // --------------------
 // ✅ Shared Utilities
@@ -41,50 +41,50 @@ const positionPool: Position[] = [
   { top: "10px", left: "-30px" },
   { bottom: "10px", right: "-30px" },
   { top: "70%", left: "-45px" },
-]
+];
 
 const checkOverlap = (pos1: Position, pos2: Position): boolean => {
   const getCoordinates = (pos: Position) => {
     let x = 0,
-      y = 0
-    if (pos.left) x = Number.parseInt(pos.left)
-    if (pos.right) x = -Number.parseInt(pos.right)
-    if (pos.top) y = Number.parseInt(pos.top)
-    if (pos.bottom) y = -Number.parseInt(pos.bottom)
-    return { x, y }
-  }
+      y = 0;
+    if (pos.left) x = Number.parseInt(pos.left);
+    if (pos.right) x = -Number.parseInt(pos.right);
+    if (pos.top) y = Number.parseInt(pos.top);
+    if (pos.bottom) y = -Number.parseInt(pos.bottom);
+    return { x, y };
+  };
 
-  const coord1 = getCoordinates(pos1)
-  const coord2 = getCoordinates(pos2)
+  const coord1 = getCoordinates(pos1);
+  const coord2 = getCoordinates(pos2);
   const distance = Math.sqrt(
     Math.pow(coord1.x - coord2.x, 2) + Math.pow(coord1.y - coord2.y, 2)
-  )
-  return distance < 50
-}
+  );
+  return distance < 50;
+};
 
 const generateNonOverlappingPositions = (): Position[] => {
-  const shuffled = [...positionPool].sort(() => Math.random() - 0.5)
-  const selected: Position[] = []
+  const shuffled = [...positionPool].sort(() => Math.random() - 0.5);
+  const selected: Position[] = [];
 
   for (let i = 0; i < shuffled.length && selected.length < 5; i++) {
-    const candidate = shuffled[i]
-    const overlaps = selected.some((pos) => checkOverlap(candidate, pos))
-    if (!overlaps) selected.push(candidate)
+    const candidate = shuffled[i];
+    const overlaps = selected.some((pos) => checkOverlap(candidate, pos));
+    if (!overlaps) selected.push(candidate);
   }
 
   while (selected.length < 5) {
-    selected.push(shuffled[selected.length])
+    selected.push(shuffled[selected.length]);
   }
 
-  return selected
-}
+  return selected;
+};
 
 // --------------------
 // ✅ Hero Component
 // --------------------
 
 const Hero = () => {
-  const [skillPositions, setSkillPositions] = useState<Position[]>([])
+  const [skillPositions, setSkillPositions] = useState<Position[]>([]);
 
   const skills = [
     { name: "React", icon: "⚛️" },
@@ -92,7 +92,7 @@ const Hero = () => {
     { name: "Node.js", icon: "🟢" },
     { name: "Python", icon: "🐍" },
     { name: "Firebase", icon: "🔥" },
-  ]
+  ];
 
   const experienceStats = [
     {
@@ -103,13 +103,13 @@ const Hero = () => {
     },
     {
       icon: Code,
-      value: "50+",
+      value: "20+",
       label: "Projects Completed",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Users,
-      value: "20+",
+      value: "10+",
       label: "Happy Clients",
       color: "from-green-500 to-emerald-500",
     },
@@ -119,12 +119,12 @@ const Hero = () => {
       label: "Technologies",
       color: "from-orange-500 to-red-500",
     },
-  ]
+  ];
 
   useEffect(() => {
-    const newPositions = generateNonOverlappingPositions()
-    setSkillPositions(newPositions)
-  }, [])
+    const newPositions = generateNonOverlappingPositions();
+    setSkillPositions(newPositions);
+  }, []);
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-950 dark:via-black dark:to-blue-950/20">
@@ -206,7 +206,9 @@ const Hero = () => {
                   <div className="w-16 h-16 rounded-full bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-700/30 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
                     <div className="absolute inset-1 rounded-full bg-gradient-to-br from-white/40 to-transparent dark:from-white/20 pointer-events-none" />
                     <div className="absolute top-2 left-2 w-3 h-3 rounded-full bg-white/60 dark:bg-white/40 blur-sm" />
-                    <span className="text-2xl relative z-10">{skills[index].icon}</span>
+                    <span className="text-2xl relative z-10">
+                      {skills[index].icon}
+                    </span>
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md" />
                   </div>
                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black/80 dark:bg-white/90 text-white dark:text-black text-xs rounded-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -220,10 +222,10 @@ const Hero = () => {
 
         {/* Name & Stats */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-5xl md:text-7xl font-bold mb-10 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent"
+          className="text-5xl md:text-7xl font-bold mb-10 pb-4 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent"
         >
           Agam Jain
         </motion.h1>
@@ -245,12 +247,20 @@ const Hero = () => {
               className="relative group"
             >
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-white/20 dark:border-gray-700/20 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}
+                >
                   <stat.icon className="h-6 w-6 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300 font-medium">{stat.label}</div>
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-xl`} />
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-300 font-medium">
+                  {stat.label}
+                </div>
+                <div
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-xl`}
+                />
               </div>
             </motion.div>
           ))}
@@ -263,20 +273,53 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+          >
             <span className="mr-2">View My Work</span>
             <ExternalLink className="h-4 w-4" />
           </Button>
           <div className="flex gap-3">
-            <Button variant="outline" size="lg" className="rounded-full p-3 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors duration-300 bg-transparent">
-              <Github className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full p-3 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors duration-300 bg-transparent">
-              <Linkedin className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full p-3 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors duration-300 bg-transparent">
-              <Mail className="h-5 w-5" />
-            </Button>
+            <a
+              href="https://github.com/agamjain18" // replace with your actual GitHub link
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full p-3 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors duration-300 bg-transparent"
+              >
+                <Github className="h-5 w-5" />
+              </Button>
+            </a>
+            <a
+              href="https://linkedin.com/in/aagam-jain-919b4421" // replace with your actual GitHub link
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full p-3 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors duration-300 bg-transparent"
+              >
+                <Linkedin className="h-5 w-5" />
+              </Button>
+            </a>{" "}
+            <a
+              href="mailto:aagamjain152003@gmail.com" // replace with your actual GitHub link
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full p-3 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors duration-300 bg-transparent"
+              >
+                <Mail className="h-5 w-5" />
+              </Button>
+            </a>{" "}
           </div>
         </motion.div>
 
@@ -287,7 +330,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="flex flex-col items-center"
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Scroll to explore</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            Scroll to explore
+          </p>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -298,7 +343,7 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

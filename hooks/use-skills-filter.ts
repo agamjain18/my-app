@@ -7,35 +7,31 @@ const allSkills = [
   "React",
   "Flutter",
   "Node.js",
-  "Rust",
+  "React Native",
   "Python",
   "Firebase",
   "MongoDB",
-  "TensorFlow",
-  "Solidity",
-  "Web3",
-  "Socket.io",
-  "Stripe",
+  "C",
+  "C++",
+  "Core Java",
+  "Advance Java",
+  "UI Path",
   "Dart",
-  "InfluxDB",
-  "MQTT",
-  "Next.js",
-  "TypeScript",
-  "AWS",
-  "Docker",
+  "Auto Cad",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "GitHub",
+  "Postman",
   "GraphQL",
   "Tailwind CSS", // Added from project data
-  "Provider", // Added from project data
-  "Express.js", // Added from project data
-  "Hardhat", // Added from project data
-  "IPFS", // Added from project data
+  "Prompt Engineering", // Added from project data
+  "Android(JAVA)", // Added from project data
   "OpenAI", // Added from project data
   "Flask", // Added from project data
   "Pandas", // Added from project data
-  "WebSocket", // Added from project data
   "Redis", // Added from project data
-  "CoinGecko API", // Added from project data
-  "WebRTC", // Added from project data
+  
 ]
 
 export const useSkillsFilter = () => {

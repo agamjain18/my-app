@@ -18,7 +18,7 @@ const Footer = () => {
         >
           <div className="mb-6">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-2">
-              Alex Johnson
+              Agam Jain 
             </h3>
             <p className="text-gray-600 dark:text-gray-400">Full Stack Developer</p>
           </div>
@@ -31,7 +31,7 @@ const Footer = () => {
             <span>React, Next.js & TailwindCSS</span>
           </div>
 
-          <p className="text-sm text-gray-500 dark:text-gray-500">© {currentYear} Alex Johnson. All rights reserved.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-500">© {currentYear} Agam Jain. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

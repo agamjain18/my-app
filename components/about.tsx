@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { User, Code2, Rocket, Heart } from "lucide-react"
-import { Card, CardContent } from "../components/ui/card"
+import { motion } from "framer-motion";
+import { User, Code2, Rocket, Heart } from "lucide-react";
+import { Card, CardContent } from "../components/ui/card";
 
 const About = () => {
   const highlights = [
     {
       icon: Code2,
-      title: "5+ Years Experience",
+      title: "1.5+ Years Experience",
       description: "Building scalable applications",
     },
     {
       icon: Rocket,
-      title: "50+ Projects",
+      title: "20+ Projects",
       description: "Delivered successfully",
     },
     {
@@ -21,10 +21,13 @@ const About = () => {
       title: "Open Source",
       description: "Active contributor",
     },
-  ]
+  ];
 
   return (
-    <section id="about" className="py-20 px-6 bg-gray-50/50 dark:bg-gray-900/50">
+    <section
+      id="about"
+      className="py-20 px-6 bg-gray-50/50 dark:bg-gray-900/50"
+    >
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -51,20 +54,29 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              Im a passionate full-stack developer with over 5 years of experience creating digital solutions that make
-              a difference. My journey in tech started with curiosity and has evolved into a deep love for building
-              applications that solve real-world problems.
+            <p className="text-lg  text-gray-600 dark:text-gray-300 leading-relaxed">
+              I'm a dedicated full-stack developer with over 1.5 years of
+              experience building impactful digital products. What began as a
+              curiosity for how things work has grown into a passion for solving
+              real-world problems through scalable, efficient, and user-focused
+              applications. My journey spans AI-driven innovations,
+              cross-platform mobile apps, and automation tools—all crafted with
+              a mindset of continuous learning and purpose-driven development.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I specialize in modern web technologies like React and Next.js, mobile development with Flutter, and
-              backend systems using Node.js and cloud platforms. Im particularly excited about emerging technologies
-              like AI, blockchain, and IoT.
+              I specialize in building modern web applications using React and
+              Next.js, developing cross-platform mobile apps with Flutter, and
+              crafting robust backend systems with Node.js and cloud services.
+              I'm deeply enthusiastic about emerging technologies—particularly
+              AI and continuously explore ways to integrate them into real-world
+              solutions.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              When Im not coding, youll find me contributing to open-source projects, mentoring aspiring developers,
-              or exploring the latest tech trends. I believe in continuous learning and sharing knowledge with the
-              community.
+              When I’m not coding, I actively contribute to open-source
+              projects, mentor aspiring developers, and stay engaged with the
+              latest advancements in technology. I’m a strong believer in
+              continuous learning and sharing knowledge, always striving to grow
+              with—and give back to—the developer community.
             </p>
           </motion.div>
 
@@ -93,8 +105,12 @@ const About = () => {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{highlight.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-300">{highlight.description}</p>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
+                          {highlight.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-300">
+                          {highlight.description}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -105,7 +121,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

@@ -106,7 +106,7 @@ const Skills = () => {
             },
             {
               title: "Cloud & Tools",
-              skills: ["Firebase", "AWS", "Docker", "Git"],
+              skills: ["Firebase", "UI Path","Chat GPT ", "Git"],
               color: "from-green-600 to-teal-600",
             },
           ].map((category, index) => (
