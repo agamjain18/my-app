@@ -55,7 +55,7 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg  text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm a dedicated full-stack developer with over 1.5 years of
+              I&apos;m a dedicated full-stack developer with over 1.5 years of
               experience building impactful digital products. What began as a
               curiosity for how things work has grown into a passion for solving
               real-world problems through scalable, efficient, and user-focused
@@ -67,7 +67,7 @@ const About = () => {
               I specialize in building modern web applications using React and
               Next.js, developing cross-platform mobile apps with Flutter, and
               crafting robust backend systems with Node.js and cloud services.
-              I'm deeply enthusiastic about emerging technologies—particularly
+              I&apos;m deeply enthusiastic about emerging technologies—particularly
               AI and continuously explore ways to integrate them into real-world
               solutions.
             </p>

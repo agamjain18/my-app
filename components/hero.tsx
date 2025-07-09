@@ -97,7 +97,7 @@ const Hero = () => {
   const experienceStats = [
     {
       icon: Calendar,
-      value: "5+",
+      value: "1.5+",
       label: "Years Experience",
       color: "from-blue-500 to-cyan-500",
     },
