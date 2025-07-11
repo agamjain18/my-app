@@ -1,6 +1,6 @@
 "use client"
 
-import { use, useEffect, useState } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import {
   ArrowLeft,
@@ -19,50 +19,16 @@ import { Badge } from "../../../../components/ui/badge"
 import { Card, CardContent } from "../../../../components/ui/card"
 import { ThemeProvider } from "../../../../components/theme-provider"
 import type { Project } from "../../../../data/projects"
-import { projectsData } from "../../../../data/projects"
 import Image from "next/image"
 
-// Generate static params for all project IDs
-export async function generateStaticParams() {
-  return projectsData.map((project) => ({
-    id: project.id.toString(),
-  }))
+interface ProjectDetailClientProps {
+  project: Project | undefined
+  projectId: string
 }
 
-// Define the proper PageProps type for Next.js 15
-interface PageProps {
-  params: Promise<{ id: string }>
-}
-
-const ProjectDetailPage = ({ params }: PageProps) => {
-  // Use the 'use' hook to unwrap the Promise
-  const { id } = use(params)
-  
-  const [project, setProject] = useState<Project | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    // Find project by ID
-    const projectId = Number.parseInt(id)
-    const foundProject = projectsData.find((p) => p.id === projectId)
-    if (foundProject) {
-      setProject(foundProject)
-    }
-    setLoading(false)
-  }, [id])
-
+const ProjectDetailClient = ({ project, projectId }: ProjectDetailClientProps) => {
   const goBack = () => {
     window.history.back()
-  }
-
-  if (loading) {
-    return (
-      <ThemeProvider>
-        <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-        </div>
-      </ThemeProvider>
-    )
   }
 
   if (!project) {
@@ -71,6 +37,9 @@ const ProjectDetailPage = ({ params }: PageProps) => {
         <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Project Not Found</h1>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              Project with ID "{projectId}" could not be found.
+            </p>
             <Button onClick={goBack} variant="outline">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Go Back
@@ -453,4 +422,4 @@ const ProjectDetailContent = ({ project, onBack }: { project: Project; onBack: (
   )
 }
 
-export default ProjectDetailPage
+export default ProjectDetailClient
