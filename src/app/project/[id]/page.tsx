@@ -22,6 +22,13 @@ import type { Project } from "../../../../data/projects"
 import { projectsData } from "../../../../data/projects"
 import Image from "next/image"
 
+// Generate static params for all project IDs
+export async function generateStaticParams() {
+  return projectsData.map((project) => ({
+    id: project.id.toString(),
+  }))
+}
+
 // Define the proper PageProps type for Next.js 15
 interface PageProps {
   params: Promise<{ id: string }>
@@ -35,15 +42,6 @@ const ProjectDetailPage = ({ params }: PageProps) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Try to get project from state or context first (since sessionStorage isn't available in artifacts)
-    // In a real app, you might use sessionStorage here
-    // const storedProject = sessionStorage.getItem("selectedProject")
-    // if (storedProject) {
-    //   setProject(JSON.parse(storedProject))
-    //   setLoading(false)
-    //   return
-    // }
-
     // Find project by ID
     const projectId = Number.parseInt(id)
     const foundProject = projectsData.find((p) => p.id === projectId)
