@@ -38,7 +38,7 @@ const ProjectDetailClient = ({ project, projectId }: ProjectDetailClientProps) =
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Project Not Found</h1>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Project with ID "{projectId}" could not be found.
+              Project with ID &quot;{projectId}&quot; could not be found.
             </p>
             <Button onClick={goBack} variant="outline">
               <ArrowLeft className="mr-2 h-4 w-4" />
